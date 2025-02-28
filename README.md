@@ -1,1 +1,1 @@
-Depends on ``command-not-found zsh-syntax-highlighting zsh-autosuggestions`` sourced from ``zsh/external.zsh``
+Depends on ``command-not-found zsh-syntax-highlighting zsh-autosuggestions``
