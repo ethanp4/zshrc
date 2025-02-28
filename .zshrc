@@ -57,7 +57,7 @@ zle -N down-line-or-beginning-search
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-setopt autocd extendedglob share_history
+setopt autocd extendedglob share_history hist_ignore_all_dups
 unsetopt beep notify
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
