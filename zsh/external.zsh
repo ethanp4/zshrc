@@ -8,4 +8,3 @@
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /etc/zsh_command_not_found
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#eval "$(zoxide init zsh)"
