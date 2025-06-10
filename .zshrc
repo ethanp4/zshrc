@@ -97,12 +97,16 @@ if [ -f /etc/os-release ]; then
 		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /usr/share/doc/pkgfile/command-not-found.zsh
 		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+		export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+		export MANROFFOPT="-c"
             ;;
         debian|ubuntu)
 		# external package imports
 		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /etc/zsh_command_not_found
 		source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+		export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+		export MANROFFOPT="-c"
             ;;
         *)
             echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
@@ -124,5 +128,4 @@ alias lsa='ls -lha'
 
 export MICRO_TRUECOLOR=1
 export COLORTERM=truecolor
-
 export LESS='-R --use-color -Dd+r$Du+b$'
