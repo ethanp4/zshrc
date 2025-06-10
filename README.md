@@ -10,5 +10,5 @@ This .zshrc basically sets keybinds, completion, history, $PROMPT, the 3 depende
 ```
 cd ~
 mv .zshrc .zshrc.old
-wget https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
+curl -O https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
 ```
