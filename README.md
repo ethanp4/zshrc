@@ -12,3 +12,5 @@ cd ~
 mv .zshrc .zshrc.old
 curl -O https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
 ```
+<br>
+Update with `update_zshrc`
