@@ -89,17 +89,30 @@ add-zsh-hook -Uz precmd reset_broken_terminal
 PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
 RPROMPT='[%F{yellow}%?%f]'
 
-#for archlinux
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/doc/pkgfile/command-not-found.zsh
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# eval "$(zoxide init zsh)"
+if [ -f /etc/os-release ]; then
+    source /etc/os-release
+    case $ID in
+        arch)
+		# external package imports
+		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+		source /usr/share/doc/pkgfile/command-not-found.zsh
+		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+            ;;
+        debian|ubuntu)
+		# external package imports
+		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+		source /etc/zsh_command_not_found
+		source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+            ;;
+        *)
+            echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
+            ;;
+    esac
+else
+    echo "Unable to detect the distribution (no /etc/os-release). Please manually check and edit .zshrc"
+fi
 
-#for ubuntu
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /etc/zsh_command_not_found
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+eval "$(zoxide init zsh)"
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
@@ -113,4 +126,3 @@ export MICRO_TRUECOLOR=1
 export COLORTERM=truecolor
 
 export LESS='-R --use-color -Dd+r$Du+b$'
-
