@@ -100,7 +100,7 @@ if [ -f /etc/os-release ]; then
 		export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 		export MANROFFOPT="-c"
             ;;
-        debian|ubuntu)
+        *"debian"*|*"ubuntu"*) #this string is sometimes "ubuntu debian" or something like that
 		# external package imports
 		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /etc/zsh_command_not_found
