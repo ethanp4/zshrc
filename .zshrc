@@ -91,7 +91,7 @@ RPROMPT='[%F{yellow}%?%f]'
 
 if [ -f /etc/os-release ]; then
     source /etc/os-release
-    case $ID in
+    case $ID_LIKE in
         arch)
 		# external package imports
 		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
