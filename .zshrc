@@ -104,7 +104,7 @@ elif [[ $ID == debian ]] || [[ $ID == ubuntu ]] || [[ $ID_LIKE == *debian* ]]; t
 	export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 	export MANROFFOPT="-c"
 else
-  echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
+	echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
 fi
 
 eval "$(zoxide init zsh)"
