@@ -86,6 +86,12 @@ function reset_broken_terminal () {
 
 add-zsh-hook -Uz precmd reset_broken_terminal
 
+function update_zshrc() {
+	mv -v $HOME/.zshrc $HOME/.zshrc.old
+	curl -o $HOME/.zshrc https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
+	echo "Downloaded latest .zshrc from https://github.com/ethanp4/zshrc to ~/.zshrc"
+}
+
 PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
 RPROMPT='[%F{yellow}%?%f]'
 
