@@ -89,31 +89,22 @@ add-zsh-hook -Uz precmd reset_broken_terminal
 PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
 RPROMPT='[%F{yellow}%?%f]'
 
-if [ -f /etc/os-release ]; then
-    source /etc/os-release
-    case $ID_LIKE in
-        arch)
-		# external package imports
+source /etc/os-release
+
+if [[ $ID == arch ]] || [[ $ID_LIKE == arch ]]; then
 		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /usr/share/doc/pkgfile/command-not-found.zsh
 		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 		export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 		export MANROFFOPT="-c"
-            ;;
-        *"debian"*|*"ubuntu"*) #this string is sometimes "ubuntu debian" or something like that
-		# external package imports
-		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ $ID == debian ]] || [[ $ID == ubuntu ]] || [[ $ID_LIKE == *debian* ]]; then
+ 		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 		source /etc/zsh_command_not_found
 		source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 		export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 		export MANROFFOPT="-c"
-            ;;
-        *)
-            echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
-            ;;
-    esac
 else
-    echo "Unable to detect the distribution (no /etc/os-release). Please manually check and edit .zshrc"
+    echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
 fi
 
 eval "$(zoxide init zsh)"
