@@ -92,19 +92,19 @@ RPROMPT='[%F{yellow}%?%f]'
 source /etc/os-release
 
 if [[ $ID == arch ]] || [[ $ID_LIKE == arch ]]; then
-		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-		source /usr/share/doc/pkgfile/command-not-found.zsh
-		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-		export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-		export MANROFFOPT="-c"
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /usr/share/doc/pkgfile/command-not-found.zsh
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+	export MANROFFOPT="-c"
 elif [[ $ID == debian ]] || [[ $ID == ubuntu ]] || [[ $ID_LIKE == *debian* ]]; then
- 		source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-		source /etc/zsh_command_not_found
-		source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-		export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-		export MANROFFOPT="-c"
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /etc/zsh_command_not_found
+	source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+	export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+	export MANROFFOPT="-c"
 else
-    echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
+  echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
 fi
 
 eval "$(zoxide init zsh)"
