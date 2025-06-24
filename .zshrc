@@ -128,3 +128,4 @@ export COLORTERM=truecolor
 export LESS='-R --use-color -Dd+r$Du+b$'
 
 bindkey "^H" backward-kill-word
+bindkey "5~" kill-word
