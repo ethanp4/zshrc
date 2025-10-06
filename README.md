@@ -11,5 +11,3 @@ This .zshrc basically sets keybinds, completion, history, $PROMPT, the 3 depende
 mv $HOME/.zshrc $HOME/.zshrc.old
 curl -o $HOME/.zshrc https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
 ```
-### Update
-Update with `update_zshrc` (runs the same code as above)
