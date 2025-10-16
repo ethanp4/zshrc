@@ -1,5 +1,5 @@
 # My .zshrc
-This .zshrc basically sets keybinds, completion, history, $PROMPT, the 3 dependencies below, and some aliases for ls & adding colours
+This .zshrc basically sets keybinds, completion, history, $PROMPT, the 4 dependencies below, and some aliases for ls & adding colours
 ### Requirements
 #### Debian
 `zsh-syntax-highlighting zsh-autosuggestions command-not-found bat (for man page colouring)`
