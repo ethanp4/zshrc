@@ -125,6 +125,12 @@ else
 	echo "Not running debian-based or arch linux, Please manually check and edit .zshrc"
 fi
 
+# ~win = windows home on wsl
+if [[ -n $WSL_DISTRO_NAME ]]; then
+  export WINHOME=$(wslpath "$(cmd.exe /c 'echo %USERPROFILE%' 2>/dev/null | tr -d '\r')")
+  hash -d win=$WINHOME
+fi
+
 eval "$(zoxide init zsh)"
 
 alias diff='diff --color=auto'
