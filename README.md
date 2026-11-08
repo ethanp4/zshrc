@@ -13,3 +13,19 @@ This .zshrc basically sets keybinds, completion, history, $PROMPT, the 4 depende
 mv $HOME/.zshrc $HOME/.zshrc.old
 curl -o $HOME/.zshrc https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/.zshrc
 ```
+
+# Powershell
+I have made the robot make a clone of it for powershell
+### Requirements
+Windows comes preinstalled with powershell 5, you might want to install powershell 7 manually
+
+```
+winget install ajeetdsouza.zoxide Git.Git
+Install-Module Microsoft.WinGet.CommandNotFound
+```
+
+### Install
+```
+mv $profile "$(echo $profile).old"
+curl -o $HOME/.zshrc https://raw.githubusercontent.com/ethanp4/zshrc/refs/heads/main/Microsoft.PowerShell_profile.ps1
+```
